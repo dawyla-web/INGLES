@@ -7,29 +7,30 @@ import random # <--- Biblioteca para sortear
 from audio_recorder_streamlit import audio_recorder
 
 # --- Configuração da Página ---
-st.set_page_config(page_title="English Master Suite", layout="centered", page_icon="🇬🇧")# --- CÓDIGO MODO SEGURO: MENU VOLTA A FUNCIONAR ---
+st.set_page_config(page_title="English Master Suite", layout="centered", page_icon="🇬🇧")# --- CÓDIGO FORÇA BRUTA (COM !IMPORTANT) ---
 hide_elements = """
     <style>
-    /* 1. Garante que o Cabeçalho e o Menu estejam VISÍVEIS */
+    /* 1. MANTÉM O MENU (Barra superior visível) */
     header {visibility: visible !important;}
-    [data-testid="stToolbar"] {visibility: visible !important;}
     
-    /* 2. Esconde o Rodapé padrão */
-    footer {visibility: hidden;}
+    /* 2. ESCONDE O RODAPÉ (Força bruta) */
+    footer {visibility: hidden !important; display: none !important;}
     
-    /* 3. Esconde o botão vermelho 'Hosted with Streamlit' */
-    .stDeployButton {display: none;}
+    /* 3. ESCONDE O BOTÃO VERMELHO (Várias tentativas de alvo para garantir) */
+    .stDeployButton {visibility: hidden !important; display: none !important;}
+    [data-testid="stDeployButton"] {visibility: hidden !important; display: none !important;}
     
-    /* 4. Esconde a barra colorida decorativa */
-    [data-testid="stDecoration"] {display: none;}
+    /* 4. ESCONDE A BARRA COLORIDA */
+    [data-testid="stDecoration"] {visibility: hidden !important; display: none !important;}
     
-    /* 5. Ajuste fino para o celular */
+    /* 5. AJUSTE DO TOPO */
     .block-container {
-        padding-top: 3rem !important; /* Espaço para o menu não ficar em cima do título */
+        padding-top: 3rem !important;
     }
     </style>
 """
 st.markdown(hide_elements, unsafe_allow_html=True)
+# ---------------------------------------------
 # ---------------------------------------------
 # ---------------------------------------------
 # ---------------------------------------------
