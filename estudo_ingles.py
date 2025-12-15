@@ -7,29 +7,30 @@ import random # <--- Biblioteca para sortear
 from audio_recorder_streamlit import audio_recorder
 
 # --- Configuração da Página ---
-st.set_page_config(page_title="English Master Suite", layout="centered", page_icon="🇬🇧")# --- CÓDIGO PARA LIMPAR A TELA (APP NATIVO) ---
+st.set_page_config(page_title="English Master Suite", layout="centered", page_icon="🇬🇧")# --- CÓDIGO MODO SEGURO: MENU VOLTA A FUNCIONAR ---
 hide_elements = """
     <style>
-    /* 1. Esconde o Rodapé padrão (Made with Streamlit) */
+    /* 1. Garante que o Cabeçalho e o Menu estejam VISÍVEIS */
+    header {visibility: visible !important;}
+    [data-testid="stToolbar"] {visibility: visible !important;}
+    
+    /* 2. Esconde o Rodapé padrão */
     footer {visibility: hidden;}
     
-    /* 2. Esconde o botão vermelho 'Hosted with Streamlit' lá embaixo */
+    /* 3. Esconde o botão vermelho 'Hosted with Streamlit' */
     .stDeployButton {display: none;}
     
-    /* 3. Esconde os botões do topo direito (Fork, GitHub, 3 pontos) */
-    [data-testid="stToolbar"] {visibility: hidden;}
-    
-    /* 4. Remove a barra colorida decorativa */
+    /* 4. Esconde a barra colorida decorativa */
     [data-testid="stDecoration"] {display: none;}
     
-    /* 5. Ajusta o espaço no topo (Padding) */
+    /* 5. Ajuste fino para o celular */
     .block-container {
-        padding-top: 2rem !important;
-        padding-bottom: 1rem !important;
+        padding-top: 3rem !important; /* Espaço para o menu não ficar em cima do título */
     }
     </style>
 """
 st.markdown(hide_elements, unsafe_allow_html=True)
+# ---------------------------------------------
 # ---------------------------------------------
 # ---------------------------------------------
 # ------------------------------------------
