@@ -7,29 +7,29 @@ import random # <--- Biblioteca para sortear
 from audio_recorder_streamlit import audio_recorder
 
 # --- Configuração da Página ---
-st.set_page_config(page_title="English Master Suite", layout="centered", page_icon="🇬🇧")# --- CÓDIGO CORRIGIDO PARA CELULAR ---
-hide_streamlit_style = """
-            <style>
-            /* 1. Esconde o rodapé e o menu hambúrguer padrão do Streamlit (opcional) */
-            #MainMenu {visibility: visible;} /* MUDADO PARA VISIBLE PARA VOCÊ VER AS OPÇÕES */
-            footer {visibility: hidden;}
-            
-            /* 2. Esconde apenas o botão de Deploy e a barra colorida, mas MANTÉM o cabeçalho para o menu funcionar */
-            .stDeployButton {
-                display: none;
-            }
-            [data-testid="stDecoration"] {
-                display: none;
-            }
-            
-            /* 3. Ajusta o topo para não ficar com espaço branco gigante, mas deixa espaço para o botão do menu */
-            .block-container {
-                padding-top: 2rem !important; 
-                padding-bottom: 0rem !important;
-            }
-            </style>
-            """
-st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+st.set_page_config(page_title="English Master Suite", layout="centered", page_icon="🇬🇧")# --- CÓDIGO PARA LIMPAR A TELA (APP NATIVO) ---
+hide_elements = """
+    <style>
+    /* 1. Esconde o Rodapé padrão (Made with Streamlit) */
+    footer {visibility: hidden;}
+    
+    /* 2. Esconde o botão vermelho 'Hosted with Streamlit' lá embaixo */
+    .stDeployButton {display: none;}
+    
+    /* 3. Esconde os botões do topo direito (Fork, GitHub, 3 pontos) */
+    [data-testid="stToolbar"] {visibility: hidden;}
+    
+    /* 4. Remove a barra colorida decorativa */
+    [data-testid="stDecoration"] {display: none;}
+    
+    /* 5. Ajusta o espaço no topo (Padding) */
+    .block-container {
+        padding-top: 2rem !important;
+        padding-bottom: 1rem !important;
+    }
+    </style>
+"""
+st.markdown(hide_elements, unsafe_allow_html=True)
 # ---------------------------------------------
 # ---------------------------------------------
 # ------------------------------------------
